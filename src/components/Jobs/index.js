@@ -482,7 +482,11 @@ class Jobs extends Component {
     }
 
     if (profileApiStatus === apiStatusConstants.failure) {
-      return <button onClick={this.getProfileDetails}>Retry</button>
+      return (
+        <button type="button" onClick={this.getProfileDetails}>
+          Retry
+        </button>
+      )
     }
 
     return <ProfileCard profileDetails={profileDetails} />
@@ -499,7 +503,9 @@ class Jobs extends Component {
       return (
         <div>
           <h1>Oops! Something Went Wrong</h1>
-          <button onClick={this.getJobs}>Retry</button>
+          <button type="button" onClick={this.getJobs}>
+            Retry
+          </button>
         </div>
       )
     }
@@ -577,7 +583,6 @@ class Jobs extends Component {
 
             <hr />
 
-            {/* 🔥 LOCATION FILTER */}
             <h1>Locations</h1>
             <ul>
               {locationsList.map(each => (
